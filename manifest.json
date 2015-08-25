@@ -1,8 +1,8 @@
 {
-  "name": "Mbl fasteignir enhancer",
+  "name": "Mbl fasteignir - viðbætur",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Calculates square meter price",
+  "description": "Reiknar út og birtir fermetraverð við hverja niðurstöðu í fasteignaleit mbl.is",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
