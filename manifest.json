@@ -1,0 +1,44 @@
+{
+  "name": "Mbl fasteignir enhancer",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Calculates square meter price",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://www.mbl.is/fasteignir/*"
+      ],
+      "js": [
+        "js/jquery.min.js",
+        "src/common.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://www.mbl.is/fasteignir/leit/*"
+      ],
+      "js": [
+        "src/leit.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://www.mbl.is/fasteignir/fasteign/*"
+      ],
+      "js": [
+        "src/fasteign.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
