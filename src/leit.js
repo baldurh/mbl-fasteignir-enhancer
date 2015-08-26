@@ -6,7 +6,7 @@
     price = cleanPrice(strongs.eq(0).text());
     size = cleanSize(strongs.eq(1).text());
     sqPrice = calculateSqPrice(price, size);
-    if (sqPrice !== NaN) {
+    if (!isNaN(sqPrice)) {
       $(this).append('<span>Fermetraverð: <strong>' + formatPrice(sqPrice) + '</strong></span>');
     }
   });

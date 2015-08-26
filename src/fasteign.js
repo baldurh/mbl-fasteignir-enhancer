@@ -5,7 +5,7 @@
   price = cleanPrice(priceCol.text());
   size = cleanSize($('td:contains("Stærð") + .value').first().text());
   sqPrice = calculateSqPrice(price, size);
-  if (sqPrice !== NaN) {
+  if (!isNaN(sqPrice)) {
     priceRow.after('<tr><td>Fermetraverð: </td><td class="value">' + formatPrice(sqPrice) + '</td></tr>');
   }
 })();

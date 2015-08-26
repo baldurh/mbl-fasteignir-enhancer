@@ -1,6 +1,6 @@
 {
   "name": "Mbl fasteignir - viðbætur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 2,
   "description": "Reiknar út og birtir fermetraverð við hverja niðurstöðu í fasteignaleit mbl.is",
   "icons": {
