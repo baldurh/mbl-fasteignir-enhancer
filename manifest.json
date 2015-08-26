@@ -1,6 +1,6 @@
 {
   "name": "Mbl fasteignir - viðbætur",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "manifest_version": 2,
   "description": "Reiknar út og birtir fermetraverð við hverja niðurstöðu í fasteignaleit mbl.is",
   "icons": {
@@ -37,6 +37,15 @@
       ],
       "js": [
         "src/fasteign.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://www.mbl.is/fasteignir/kortaleit/*"
+      ],
+      "js": [
+        "src/kort.js"
       ],
       "run_at": "document_end"
     }
