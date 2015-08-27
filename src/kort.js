@@ -1,7 +1,7 @@
 (function(){
   var price, size, sqPrice, observer, aEle, href, config, oldHref, modal;
   oldHref = '';
-  modal = $('.popupmodal');
+  modal = document.querySelector('.popupmodal');
   observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       aEle = $('a.mp-skodaeign')[0];
