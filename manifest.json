@@ -1,6 +1,6 @@
 {
   "name": "Mbl fasteignir - viðbætur",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "manifest_version": 2,
   "description": "Reiknar út og birtir fermetraverð við hverja niðurstöðu í fasteignaleit mbl.is",
   "icons": {
@@ -19,6 +19,16 @@
       "js": [
         "js/jquery.min.js",
         "src/common.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://www.mbl.is/fasteignir/",
+        "http://www.mbl.is/fasteignir/leit/*"
+      ],
+      "js": [
+        "src/search-form.js"
       ],
       "run_at": "document_end"
     },
