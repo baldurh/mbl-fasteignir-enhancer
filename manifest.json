@@ -1,8 +1,8 @@
 {
   "name": "Mbl fasteignir - viðbætur",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 2,
-  "description": "Reiknar út og birtir fermetraverð við hverja niðurstöðu í fasteignaleit mbl.is",
+  "description": "Bætir upplifun á fasteignaleit mbl",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -34,7 +34,8 @@
     },
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/leit/*"
+        "http://www.mbl.is/fasteignir/leit/*",
+        "http://www.mbl.is/fasteignir/opinhus/"
       ],
       "js": [
         "src/leit.js"
