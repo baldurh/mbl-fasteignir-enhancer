@@ -1,8 +1,8 @@
 {
-  "name": "Mbl fasteignir - viðbætur",
-  "version": "1.2.1",
+  "name": "Fasteignaleit - viðbætur",
+  "version": "2.0.0",
   "manifest_version": 2,
-  "description": "Bætir upplifun á fasteignaleit mbl",
+  "description": "Bætir upplifun á fasteignaleit mbl.is og visir.is",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -14,10 +14,12 @@
   "content_scripts": [
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/*"
+        "http://www.mbl.is/fasteignir/*",
+        "http://fasteignir.visir.is/*"
       ],
       "js": [
         "js/jquery.min.js",
+        "js/lodash.min.js",
         "src/common.js"
       ],
       "run_at": "document_end"
@@ -28,7 +30,7 @@
         "http://www.mbl.is/fasteignir/leit/*"
       ],
       "js": [
-        "src/search-form.js"
+        "src/mbl/search-form.js"
       ],
       "run_at": "document_end"
     },
@@ -38,7 +40,7 @@
         "http://www.mbl.is/fasteignir/opinhus/"
       ],
       "js": [
-        "src/leit.js"
+        "src/mbl/leit.js"
       ],
       "run_at": "document_end"
     },
@@ -47,7 +49,7 @@
         "http://www.mbl.is/fasteignir/fasteign/*"
       ],
       "js": [
-        "src/fasteign.js"
+        "src/mbl/fasteign.js"
       ],
       "run_at": "document_end"
     },
@@ -56,7 +58,36 @@
         "http://www.mbl.is/fasteignir/kortaleit/*"
       ],
       "js": [
-        "src/kort.js"
+        "src/mbl/kort.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://fasteignir.visir.is/"
+      ],
+      "js": [
+        "src/visir/search-form-edit.js",
+        "src/visir/search-form.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://fasteignir.visir.is/property/*"
+      ],
+      "js": [
+        "src/visir/property.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://fasteignir.visir.is/search/*"
+      ],
+      "js": [
+        "src/visir/search-form-edit.js",
+        "src/visir/search.js"
       ],
       "run_at": "document_end"
     }
