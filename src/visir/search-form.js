@@ -20,7 +20,7 @@
   div = $('<div>', {
     style: 'display:inline-block;margin-top:35px;margin-right:10px;float:left;'
   });
-  div.append(checkbox).append(checkboxLabel)
+  div.append(checkbox).append(checkboxLabel);
   $('.searchmain__submit').prepend(div);
 
   // Hide annoying ad
@@ -37,9 +37,10 @@
       items: items,
       selector: '#topsearch',
       checkboxCustomMethod: function (elem) {
-        $(elem).prop('checked', true);
+        var $elem = $(elem);
+        $elem.prop('checked', true);
         // Update the UI on parent checkboxes
-        var div = $(elem).parents('div').first()
+        var div = $elem.parents('div').first();
         div.addClass('opened');
         div.prev().addClass('active');
       }

@@ -1,5 +1,5 @@
 (function() {
-  var sqms,prices,selectSizeFrom,selectSizeTo,selectPriceFrom,selectPriceTo
+  var sqms,prices,selectSizeFrom,selectSizeTo,selectPriceFrom,selectPriceTo;
   sqms = _.range(0, 101, 10);
   sqms = sqms.concat(_.range(125, 301, 25));
   sqms = sqms.concat(_.range(350, 1001, 50));

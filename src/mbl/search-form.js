@@ -36,15 +36,16 @@
       items: items,
       selector: '#realestate-search-form',
       checkboxCustomMethod: function (elem) {
+        var $elem = $(elem);
         // Trigger the change event in the DOM
-        $(elem)[0].click();
-        $(elem).prop('checked', true);
+        // So that the checkbox will be added to the query
+        elem.click();
+        $elem.prop('checked', true);
         // Update the UI on parent checkboxes
-        $(elem).parents('div').each(function (idx, div) {
+        $elem.parents('div').each(function (idx, div) {
           // Check if the id is a number
           if (isFinite(parseInt(div.id))) {
             $(div).show();
-            $(div).parent().find('label:first').addClass('dirty');
           }
         });
       }
@@ -74,10 +75,11 @@
     chrome.storage.sync.remove('mbl');
     // Clear form
     $('#realestate-search-form').find('input[type=checkbox]:checked,input[type=text],select').each(function (idx, elem) {
-      $(elem)[0].click();
-      $(elem).prop('checked', false);
-      $(elem).val('');
-      $(elem).parents('div').each(function (idx, div) {
+      var $elem = $(elem);
+      elem.click();
+      $elem.prop('checked', false);
+      $elem.val('');
+      $elem.parents('div').each(function (idx, div) {
         // Check if the id is a number
         if (isFinite(parseInt(div.id))) {
           $(div).parent().find('label:first').removeClass('dirty');

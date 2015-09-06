@@ -19,27 +19,29 @@
     checked: 'checked',
     class: 'in-checkbox js-tag'
   });
-  div.append(checkbox).append(checkboxLabel)
+  div.append(checkbox).append(checkboxLabel);
 
   $('#searchsidebar h1').after(div);
 
   var resultsPlaceholder = document.querySelector('#result-placeholder');
   var observer = new MutationObserver(function(mutations) {
 
+    // Remove ads
     $('[id^=EAS_fif]').hide();
     $('[href^="/ads"]').hide();
     $('.b-banner-over').hide();
     $('[name=banner]').hide();
     var estateRows = $('.b-products-item-list');
     estateRows.each(function (idx, elem) {
-      var sizeText = $(elem).find('.b-products-item-details-param td:contains("Stærð:") strong').text();
-      var priceText = $(elem).find('.b-products-item-details-param td:contains("Verð:") strong').text();
+      var $elem = $(elem);
+      var sizeText = $elem.find('.b-products-item-details-param td:contains("Stærð:") strong').text();
+      var priceText = $elem.find('.b-products-item-details-param td:contains("Verð:") strong').text();
 
       var price = cleanPrice(priceText);
       var size = cleanSize(sizeText);
       var sqPrice = calculateSqPrice(price, size);
       if (isFinite(sqPrice)) {
-        $(elem).find('.b-products-item-details-param tbody').append('<tr><td colspan=4  style="padding-top:5px;">Fermetraverð: <strong> ' + formatPrice(sqPrice) + ' </strong></td></tr>');
+        $elem.find('.b-products-item-details-param tbody').append('<tr><td colspan=4  style="padding-top:5px;">Fermetraverð: <strong> ' + formatPrice(sqPrice) + ' </strong></td></tr>');
       }
     });
   });
