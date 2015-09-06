@@ -1,5 +1,6 @@
 (function(){
   var estateRows, strongs, price, size, sqPrice;
+  $('#realestate_ad').hide();
   estateRows = $('.realestate-head + .realestate-properties');
   estateRows.each(function (idx, elem) {
     var $elem = $(elem);
