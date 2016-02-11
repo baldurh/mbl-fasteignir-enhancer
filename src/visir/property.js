@@ -1,15 +1,12 @@
 (function(){
   var price, size, sqPrice, lastRow, newRow;
-  price = cleanPrice($('.b-produtcs-param-price strong').text());
-  size = cleanSize($('.b-house-param li:contains("Stærð") strong').text());
+  price = cleanPrice($('.price').text());
+  size = cleanSize($('.features li:first').text());
   sqPrice = calculateSqPrice(price, size);
+  console.log(sqPrice);
   if (isFinite(sqPrice)) {
-    lastRow = $('.b-house-param ul li:last');
     newRow = $('<li>');
-    newRow.append('<span>Fermetraverð: </span><strong>' + formatPrice(sqPrice) + '</strong>');
-    if (!lastRow.hasClass('styled')) {
-      newRow.addClass('styled');
-    }
-    $('.b-house-param ul').append(newRow);
+    newRow.append('<span class="title">Fermetraverð: </span><span class="data">' + formatPrice(sqPrice) + '</span>');
+    $('ul.loan').append(newRow);
   }
 })();

@@ -34,14 +34,17 @@
     var estateRows = $('.b-products-item-list');
     estateRows.each(function (idx, elem) {
       var $elem = $(elem);
-      var sizeText = $elem.find('.b-products-item-details-param td:contains("Stærð:") strong').text();
-      var priceText = $elem.find('.b-products-item-details-param td:contains("Verð:") strong').text();
+      var sizeText = $elem.find('.b-products-item-details-param td:eq(1)').text();
+      var priceText = $elem.find('.b-products-item-details-param td:eq(0)').text();
 
       var price = cleanPrice(priceText);
       var size = cleanSize(sizeText);
       var sqPrice = calculateSqPrice(price, size);
       if (isFinite(sqPrice)) {
-        $elem.find('.b-products-item-details-param tbody').append('<tr><td colspan=4  style="padding-top:5px;">Fermetraverð: <strong> ' + formatPrice(sqPrice) + ' </strong></td></tr>');
+        var featuresDiv = $elem.find('.b-products-item-details-param');
+        var newElement = $('<div style="font-size: 1.3em; margin: 2px 0px -8px 0;">')
+        newElement.append(`Fermetraverð: <strong>${formatPrice(sqPrice)}</strong>`);
+        featuresDiv.after(newElement);
       }
     });
   });
