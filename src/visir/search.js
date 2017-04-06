@@ -31,20 +31,20 @@
     $('[href^="/ads"]').hide();
     $('.b-banner-over').hide();
     $('[name=banner]').hide();
-    var estateRows = $('.b-products-item-list');
+    var estateRows = $('.property.property--grid');
     estateRows.each(function (idx, elem) {
       var $elem = $(elem);
-      var sizeText = $elem.find('.b-products-item-details-param td:eq(1)').text();
-      var priceText = $elem.find('.b-products-item-details-param td:eq(0)').text();
+      var sizeText = $elem.find('.property__size').text();
+      var priceText = $elem.find('.property__price').text();
 
       var price = cleanPrice(priceText);
       var size = cleanSize(sizeText);
       var sqPrice = calculateSqPrice(price, size);
       if (isFinite(sqPrice)) {
-        var featuresDiv = $elem.find('.b-products-item-details-param');
-        var newElement = $('<div style="font-size: 1.3em; margin: 2px 0px -8px 0;">')
+        var featuresDiv = $elem.find('.property__details');
+        var newElement = $('<div style="font-size: 1.4em; margin: 8px 0;">')
         newElement.append(`Fermetraverð: <strong>${formatPrice(sqPrice)}</strong>`);
-        featuresDiv.after(newElement);
+        featuresDiv.append(newElement);
       }
     });
   });
