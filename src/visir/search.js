@@ -31,6 +31,7 @@
     $('[href^="/ads"]').hide();
     $('.b-banner-over').hide();
     $('[name=banner]').hide();
+    $('.property.property--grid.property--sponsor').remove();
     var estateRows = $('.property.property--grid');
     estateRows.each(function (idx, elem) {
       var $elem = $(elem);
