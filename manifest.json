@@ -16,8 +16,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/*",
-        "http://fasteignir.visir.is/*"
+        "*://www.mbl.is/fasteignir/*",
+        "*://fasteignir.visir.is/*"
       ],
       "js": [
         "js/jquery.min.js",
@@ -28,8 +28,8 @@
     },
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/",
-        "http://www.mbl.is/fasteignir/leit/*"
+        "*://www.mbl.is/fasteignir/",
+        "*://www.mbl.is/fasteignir/leit/*"
       ],
       "js": [
         "src/mbl/search-form.js"
@@ -38,8 +38,8 @@
     },
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/leit/*",
-        "http://www.mbl.is/fasteignir/opinhus/"
+        "*://www.mbl.is/fasteignir/leit/*",
+        "*://www.mbl.is/fasteignir/opinhus/"
       ],
       "js": [
         "src/mbl/leit.js"
@@ -48,7 +48,7 @@
     },
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/fasteign/*"
+        "*://www.mbl.is/fasteignir/fasteign/*"
       ],
       "js": [
         "src/mbl/fasteign.js"
@@ -57,7 +57,7 @@
     },
     {
       "matches": [
-        "http://www.mbl.is/fasteignir/kortaleit/*"
+        "*://www.mbl.is/fasteignir/kortaleit/*"
       ],
       "js": [
         "src/mbl/kort.js"
@@ -66,7 +66,7 @@
     },
     {
       "matches": [
-        "http://fasteignir.visir.is/"
+        "*://fasteignir.visir.is/"
       ],
       "js": [
         "src/visir/search-form-edit.js",
@@ -76,7 +76,7 @@
     },
     {
       "matches": [
-        "http://fasteignir.visir.is/property/*"
+        "*://fasteignir.visir.is/property/*"
       ],
       "js": [
         "src/visir/property.js"
@@ -85,7 +85,7 @@
     },
     {
       "matches": [
-        "http://fasteignir.visir.is/search/*"
+        "*://fasteignir.visir.is/search/*"
       ],
       "js": [
         "src/visir/search-form-edit.js",
