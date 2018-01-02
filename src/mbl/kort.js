@@ -1,7 +1,7 @@
 (function(){
   var price, size, sqPrice, observer, aEle, href, config, oldHref, modal;
   oldHref = '';
-  modal = document.querySelector('.popupmodal');
+  modal = document.querySelector('.leaflet-popup-pane');
   observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       aEle = $('a.mp-skodaeign')[0];
@@ -21,7 +21,7 @@
     });
   });
 
-  config = { attributes: true };
+  config = { childList: true };
   observer.observe(modal, config);
 
 })();
